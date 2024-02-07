@@ -11,6 +11,7 @@ const {onToogleButton} = useTelegram()
 useEffect(() => {
   tg.ready()
 }, [])
+
   return (
     <div className="App">
       <button onClick={onToogleButton}>Toogle</button>
