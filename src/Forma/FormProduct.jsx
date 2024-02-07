@@ -30,7 +30,7 @@ function FormProductList() {
   
     return (
       <div className="form">
-        <h3>Введите ваши данные</h3>
+        <h3>Введите ваши данные 2</h3>
         <input className={'input'} type="text" placeholder={'страна'} value={country} onChange={onChangeCountry}  />
         <input className={'input'} type="text" placeholder={'улица'} value={street} onChange={onChangeStreet} />
         <select className={'select'} value={subject} onChange={onChangeSubject}>
