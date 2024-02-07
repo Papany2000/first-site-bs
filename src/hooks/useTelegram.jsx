@@ -19,7 +19,9 @@ export function useTelegram() {
         tg,
         user: tg.initData?.user,
         onClose,
-        onToogleButton
+        onToogleButton,
+        showData: JSON.stringify(tg.initData),
+        showDataUnSave: JSON.stringify(tg.initDataUnsafe),
        } 
       )
 }
