@@ -12,16 +12,16 @@ function FormProductList() {
 
     React.useEffect(() => {
         // меняем текст кнопки
-        tg.MainButton.setParams({
+        tg.MainButton?.setParams({
             text: 'отправить данные'
         })
     }, [])
      // сделаем прocтую валидацию
      React.useEffect(() => {
         if(!street || !country) {
-            tg.MainButton.hide()
+            tg.MainButton?.hide()
         } else {
-           tg.MainButton.show()
+           tg.MainButton?.show()
         }
     }, [street, country])
     const onChangeCountry = (e) => setCountry(e.target.value)
@@ -30,7 +30,7 @@ function FormProductList() {
   
     return (
       <div className="form">
-        <h3>Введите ваши данные 2</h3>
+        <h3>Введите ваши данные </h3>
         <input className={'input'} type="text" placeholder={'страна'} value={country} onChange={onChangeCountry}  />
         <input className={'input'} type="text" placeholder={'улица'} value={street} onChange={onChangeStreet} />
         <select className={'select'} value={subject} onChange={onChangeSubject}>
