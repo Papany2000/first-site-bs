@@ -2,24 +2,25 @@ import React, { useEffect } from 'react';
 import './Form.css'
 import { useTelegram } from '../hooks/useTelegram';
 
+
 function FormProductList() {
 
     const[country, setCountry] = React.useState('')
     const[street, setStreet] = React.useState('')
     const[subject, setSubject] = React.useState('phisical')
     const {tg} = useTelegram()
-    React.useEffect(() => {
+    //React.useEffect(() => {
         // меняем текст кнопки
-        tg.MainButton.setparams({
-            text: 'отправить данные'
-        })
-    }, [])
-     // сделаем прстую валидацию
+       // tg.MainButton.setparams({
+        //    text: 'отправить данные'
+        //})
+    //}, [])
+     // сделаем прocтую валидацию
      React.useEffect(() => {
         if(!street || !country) {
             tg.MainButton.hide()
         } else {
-            tg.MainButton.show()
+           tg.MainButton.show()
         }
     }, [street, country])
     const onChangeCountry = (e) => setCountry(e.target.value)
@@ -31,7 +32,7 @@ function FormProductList() {
         <h3>Введите ваши данные</h3>
         <input className={'input'} type="text" placeholder={'страна'} value={country} onChange={onChangeCountry}  />
         <input className={'input'} type="text" placeholder={'улица'} value={street} onChange={onChangeStreet} />
-        <select className={'select'} value={subject} onChange={onChangeStreet}>
+        <select className={'select'} value={subject} onChange={onChangeSubject}>
             <option value={'phisical'}>физ. лицо</option>
             <option value={'legal'}>юр. лицо</option>
         </select>
