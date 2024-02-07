@@ -17,7 +17,7 @@ export function useTelegram() {
       return (
        {
         tg,
-        user: tg.initData?.user,
+        user: tg.initData?.user.first_name + ' ' + tg.initData?.user.last_name,
         onClose,
         onToogleButton,
         showData: JSON.stringify(tg.initData),
