@@ -17,11 +17,9 @@ export function useTelegram() {
       return (
        {
         tg,
-        user: tg.initDataUnsafe?.user?.['first_name'] + ' ' + tg.initDataUnsafe?.user?.['last_name'],
+        user: tg.initDataUnsafe?.user?.['first_name'],
         onClose,
         onToogleButton,
-        showData: JSON.stringify(tg.initDataUnsafe?.user),
-        showDataUnSave: JSON.stringify(tg.initDataUnsafe?.user?.['last_name']),
        } 
       )
 }
