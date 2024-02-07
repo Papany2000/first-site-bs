@@ -15,7 +15,7 @@ useEffect(() => {
   return (
     <div className="App">
       <button onClick={onToogleButton}>Toogle</button>
-     <h1>Привет Медвед.</h1>
+     <h1>Привет Медвед 21.</h1>
      <Header/>
     </div>
   );
