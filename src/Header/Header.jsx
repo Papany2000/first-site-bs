@@ -1,4 +1,4 @@
-import Button from "../Button/Button";
+
 import './Header.css'
 import { useTelegram } from "../hooks/useTelegram";
 
@@ -9,7 +9,7 @@ const Header = () => {
    
     return (
         <div className={'header'}>
-            <Button onCLick={onClose}>Закрыть</Button>
+            <button onCLick={onClose}>Закрыть</button>
             <span className={'username'} >Имя пользователя: {user}</span>
         </div>
     )
