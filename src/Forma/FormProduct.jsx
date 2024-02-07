@@ -8,13 +8,13 @@ function FormProductList() {
     const[country, setCountry] = React.useState('')
     const[street, setStreet] = React.useState('')
     const[subject, setSubject] = React.useState('phisical')
-    const {tg} = useTelegram()
-    //React.useEffect(() => {
+    const{tg} = useTelegram()
+    React.useEffect(() => {
         // меняем текст кнопки
-       // tg.MainButton.setparams({
-        //    text: 'отправить данные'
-        //})
-    //}, [])
+        tg.MainButton.setParams({
+            text: 'отправить данные'
+        })
+    }, [])
      // сделаем прocтую валидацию
      React.useEffect(() => {
         if(!street || !country) {
