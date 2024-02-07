@@ -2,12 +2,12 @@ import React, { useEffect } from 'react';
 import './App.css';
 import { useTelegram } from './hooks/useTelegram';
 import Header from './Header/Header';
-const tg = window.Telegram.WebApp
+// const tg = window.Telegram.WebApp
 
 
 function App() {
 
-const {onToogleButton} = useTelegram()
+const {onToogleButton, tg} = useTelegram()
 useEffect(() => {
   tg.ready()
 }, [])
