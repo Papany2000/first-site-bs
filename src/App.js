@@ -2,21 +2,26 @@ import React, { useEffect } from 'react';
 import './App.css';
 import { useTelegram } from './hooks/useTelegram';
 import Header from './Header/Header';
-// const tg = window.Telegram.WebApp
+import { Route, Routes } from 'react-router-dom';
+import ProductList from './Product/ProductList';
+import FormProductList from './Forma/FormProduct';
+
 
 
 function App() {
 
-const {onToogleButton, tg} = useTelegram()
+const {tg} = useTelegram()
 useEffect(() => {
   tg.ready()
 }, [])
 
   return (
     <div className="App">
-      <button onClick={onToogleButton}>Toogle</button>
-     <h1>Привет Медвед 25.</h1>
      <Header/>
+     <Routes>
+        <Route index element={<ProductList/>}/>
+        <Route path={'/form'} element = {<FormProductList/>}/>
+     </Routes>
     </div>
   );
 }

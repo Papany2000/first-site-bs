@@ -10,16 +10,14 @@ export function useTelegram() {
             tg.MainButton.hide()
         } else {
             tg.MainButton.show()
-          
-        }
-        console.log(tg)
+        }  
       }
       return (
        {
         tg,
         user: tg.initDataUnsafe?.user?.['first_name'],
         onClose,
-        onToogleButton,
+        onToogleButton
        } 
       )
 }
