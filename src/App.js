@@ -19,7 +19,7 @@ useEffect(() => {
     <div className="App">
      <Header/>
      <Routes>
-        <Route  path={'/form'} element ={<ProductList/>}/>
+        <Route  path='form' element={<ProductList/>}/>
         <Route index element={<FormProductList/>}/>
      </Routes>
     </div>
