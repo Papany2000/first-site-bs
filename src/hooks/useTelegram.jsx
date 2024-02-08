@@ -1,24 +1,23 @@
-const tg = window.Telegram.WebApp;
+const tg = window.Telegram.WebApp 
 
 export function useTelegram() {
-
     const onClose = () => {
         tg.close()
-    }
-
-    const onToggleButton = () => {
-        if(tg.MainButton.isVisible) {
-            tg.MainButton.hide();
+      }
+      // для показа и скрытия основной кнопки для взаимодействия с ботом создаём метод onToogleButton
+      const onToogleButton = () => {
+        if(tg.MainButton.isVisible){
+            tg.MainButton.hide()
         } else {
-            tg.MainButton.show();
-        }
-    }
-
-    return {
-        onClose,
-        onToggleButton,
+            tg.MainButton.show()
+        }  
+      }
+      return (
+       {
         tg,
-        user: tg.initDataUnsafe?.user,
-        queryId: tg.initDataUnsafe?.query_id,
-    }
+        user: tg.initDataUnsafe?.user?.['first_name'],
+        onClose,
+        onToogleButton
+       } 
+      )
 }

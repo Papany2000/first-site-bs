@@ -1,17 +1,17 @@
 
+import { NavLink } from 'react-router-dom';
 import './Header.css'
-import { useTelegram } from "../hooks/useTelegram";
+
 
 const Header = () => {
     
-   const {user, onClose, } = useTelegram()
+   
  
    
     return (
-        <div className={'header'}>
-            
-            <button onCLick={onClose}>Закрыть</button>
-            <span className={'username'} >Имя пользователя: {user}</span>
+        <div className={'header'}>    
+            <NavLink to="/" style={{marginRight: '30px'}}>Home</NavLink>
+            <NavLink to="/form">Forma</NavLink>
         </div>
     )
 }
