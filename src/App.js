@@ -6,12 +6,14 @@ import ProductList from './Product/ProductList';
 import FormProductList from './Forma/FormProduct';
 import { useTelegram } from './hooks/useTelegram';
 import React from 'react';
-
+import Button from './Button/Button';
 
 
 function App() {
 
-const {onClose} = useTelegram()
+  const {onToogleButton} = useTelegram()
+
+const {tg} = useTelegram()
 React.useEffect(() => {
   tg.ready()
 }, [])
@@ -19,8 +21,8 @@ React.useEffect(() => {
 
   return (
     <div className="App">
-      <button onClick={onClose}> Закрыть</button>
      <Header/>
+     <Button onClick={onToogleButton}>toogle</Button>
      <Routes>
         <Route path='/' element = {<ProductList/>}/>
         <Route path='/form' element = {<FormProductList/>}/>
