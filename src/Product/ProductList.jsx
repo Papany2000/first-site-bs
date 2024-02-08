@@ -4,7 +4,7 @@ function ProductList() {
   
       return (
         <div className="product">
-        Продукт
+        Продукт 2
         </div>
       );
     }
