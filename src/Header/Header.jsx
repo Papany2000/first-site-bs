@@ -13,11 +13,13 @@ const Header = () => {
    }, [])
    
     return (
-        <div className={'header'}> 
+        <div> 
             <Button onClick={onClose}>Закрыть</Button> 
-            <span className={'username'}>{user}</span>  
-            <NavLink to="/" style={{marginRight: '30px'}}>Home</NavLink>
-            <NavLink to="/form">Forma</NavLink>
+            <div className={'header'}>
+            <span className={'username'}>Пользователь: {user}</span>  
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/form">Forma</NavLink> 
+            </div>
         </div>
     )
 }
