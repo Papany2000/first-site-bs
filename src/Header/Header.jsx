@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import './Header.css'
 import { useTelegram } from '../hooks/useTelegram';
 import Button from '../Button/Button';
+import React from 'react';
 
 const Header = () => {
     
