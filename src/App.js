@@ -24,7 +24,7 @@ React.useEffect(() => {
      <Header/>
      <Button onClick={onToogleButton}>toogle</Button>
      <Routes>
-        <Route path='/' element = {<ProductList/>}/>
+        <Route index element = {<ProductList/>}/>
         <Route path='/form' element = {<FormProductList/>}/>
      </Routes>
     </div>
