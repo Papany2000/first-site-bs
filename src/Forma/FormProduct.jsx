@@ -10,7 +10,7 @@ const FormProductList = () => {
     const [subject, setSubject] = useState('physical');
     const { tg } = useTelegram();
     // колбек который мы вешаем на слушатель MainButton
-    const onSendData = useCallback(() => {
+    const onSendData = React.useCallback(() => {
     // получаем данные из формы    
         const data = {
             country,
