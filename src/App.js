@@ -19,8 +19,8 @@ useEffect(() => {
     <div className="App">
      <Header/>
      <Routes>
-        <Route index element={<ProductList/>}/>
-        <Route path={'/form'} element = {<FormProductList/>}/>
+        <Route  path={'/form'} element ={<ProductList/>}/>
+        <Route index element={<FormProductList/>}/>
      </Routes>
     </div>
   );
