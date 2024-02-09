@@ -14,7 +14,8 @@ const Header = () => {
    
     return (
         <div> 
-            <Button onClick={onClose} className={'.button'}>Закрыть</Button> 
+            <Button onClick={onClose}
+            >Закрыть</Button> 
             <div className={'header'}>
             <span className={'username'}>Пользователь: {user}</span>  
             <NavLink to="/">Home</NavLink>
