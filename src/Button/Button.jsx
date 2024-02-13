@@ -3,7 +3,7 @@ const Button = (props) => {
 
     return (
         <div>
-            <button {...props} className={'button' + props.className} />
+            <button {...props} className={'button'} />
         </div>
 
     )

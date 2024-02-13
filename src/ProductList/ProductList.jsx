@@ -22,9 +22,12 @@ const getTotalPrice = (items = []) => {
 }
 
 const ProductList = () => {
+    // создаём корзину, массив с объектами
     const [addedItems, setAddedItems] = useState([]);
-    const {tg, queryId} = useTelegram();
 
+    const {tg, queryId} = useTelegram();
+    
+    // функция отправляет данные о продуктах в корзине на бекэнд
     const onSendData = useCallback(() => {
         const data = {
             products: addedItems,
@@ -40,6 +43,7 @@ const ProductList = () => {
         })
     }, [addedItems])
 
+    // вешаем onSendData на mainButton и удаляем при размонтировании
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
         return () => {
@@ -47,7 +51,9 @@ const ProductList = () => {
         }
     }, [onSendData])
 
+    // функция добавления продуктов в корзину
     const onAdd = (product) => {
+        // проверяем наличие товара в корзине и если его нет то добавляем
         const alreadyAdded = addedItems.find(item => item.id === product.id);
         let newItems = [];
 
@@ -59,6 +65,7 @@ const ProductList = () => {
 
         setAddedItems(newItems)
 
+ // если товар в корзине есть то меняем текст кнопки MainButton
         if(newItems.length === 0) {
             tg.MainButton.hide();
         } else {

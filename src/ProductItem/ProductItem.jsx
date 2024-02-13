@@ -4,6 +4,7 @@ import './ProductItem.css';
 
 const ProductItem = ({product, className, onAdd}) => {
 
+// функция добавляет товар в корзину
     const onAddHandler = () => {
         onAdd(product);
     }

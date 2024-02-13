@@ -9,6 +9,7 @@ const FormProductList = () => {
     const [street, setStreet] = useState('');
     const [subject, setSubject] = useState('physical');
     const { tg } = useTelegram();
+    console.log(22, tg)
     // колбек который мы вешаем на слушатель MainButton
     const onSendData = React.useCallback(() => {
     // получаем данные из формы    
@@ -17,12 +18,14 @@ const FormProductList = () => {
             street,
             subject
         }
-    // полученные данные из формы отправляем боту
+    // полученные данные из формы отправляем боту. метод sendData
         tg.sendData(JSON.stringify(data));
     }, [country, street, subject])
-    // вешаем слушатель событий на кнопку MainButton
+    
     useEffect(() => {
+        // вешаем слушатель событий на кнопку MainButton
         tg.onEvent('mainButtonClicked', onSendData)
+        // отписываемся от события
         return () => {
             tg.offEvent('mainButtonClicked', onSendData)
         }
@@ -46,7 +49,7 @@ const FormProductList = () => {
             text: 'Отправить данные'
         })
     }, [])
-    // условие видимости кнопки MainButton
+    // создаём условие видимости кнопки MainButton
     useEffect(() => {
         if (!street || !country) {
             tg.MainButton.hide();
